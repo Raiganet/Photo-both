@@ -1,0 +1,133 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container { max-width: 1400px; margin: 0 auto; }
+
+header { text-align: center; color: white; margin-bottom: 30px; }
+header h1 { font-size: 2.5rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+header p { font-size: 1.2rem; opacity: 0.9; }
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.camera-section { display: flex; flex-direction: column; gap: 20px; }
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    aspect-ratio: 4/3;
+    background: #000;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+#video { width: 100%; height: 100%; object-fit: cover; }
+
+.frame-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Frame Styles */
+.classic-frame { border: 20px solid #8B4513; box-shadow: inset 0 0 20px rgba(0,0,0,0.5); }
+
+.vintage-frame {
+    border: 15px solid #D4A574;
+    background: linear-gradient(45deg, transparent 30%, rgba(212,165,116,0.3) 50%, transparent 70%);
+    box-shadow: inset 0 0 30px rgba(139,69,19,0.4);
+}
+
+.modern-frame { border: 10px solid #fff; box-shadow: 0 0 0 5px #333, inset 0 0 20px rgba(0,0,0,0.1); }
+
+.colorful-frame {
+    border: 15px solid transparent;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f7b731) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+.elegant-frame { border: 25px solid #C9B037; box-shadow: inset 0 0 30px rgba(201,176,55,0.3), 0 0 20px rgba(201,176,55,0.5); }
+
+.fun-frame { border: 20px dashed #ff69b4; box-shadow: inset 0 0 20px rgba(255,105,180,0.3); }
+
+.minimalist-frame { border: 5px solid #333; margin: 10px; }
+
+.neon-frame {
+    border: 8px solid #0ff;
+    box-shadow: 0 0 20px #0ff, inset 0 0 20px #0ff, 0 0 40px #0ff;
+    animation: neonPulse 2s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+    0%, 100% { box-shadow: 0 0 20px #0ff, inset 0 0 20px #0ff, 0 0 40px #0ff; }
+    50% { box-shadow: 0 0 30px #0ff, inset 0 0 30px #0ff, 0 0 60px #0ff; }
+}
+
+.controls { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 150px;
+}
+
+.btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+.btn-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+.btn-secondary { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; }
+.btn-success { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; }
+
+.frames-section { display: flex; flex-direction: column; gap: 20px; }
+.frames-section h2 { color: #333; font-size: 1.8rem; }
+
+.frames-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+
+.frame-option { cursor: pointer; transition: all 0.3s ease; text-align: center; }
+.frame-option:hover { transform: scale(1.05); }
+.frame-option.active { transform: scale(1.05); filter: brightness(1.2); }
+
+.frame-preview {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.frame-option p { color: #333; font-weight: 600; }
+
+@media (max-width: 1024px) {
+    .main-content { grid-template-columns: 1fr; }
+    .frames-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+    header h1 { font-size: 2rem; }
+    .frames-grid { grid-template-columns: repeat(2, 1fr); }
+    .controls { flex-direction: column; }
+    .btn { width: 100%; }
+}
