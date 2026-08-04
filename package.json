@@ -1,0 +1,46 @@
+{
+  "name": "photobooth-enterprise",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "16.0.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "typescript": "^5.4.0",
+    "tailwindcss": "^3.4.0",
+    "framer-motion": "^11.0.0",
+    "zustand": "^4.5.0",
+    "@tanstack/react-query": "^5.28.0",
+    "fabric": "^6.0.0",
+    "idb": "^8.0.0",
+    "qrcode.react": "^3.1.0",
+    "react-webcam": "^7.2.0",
+    "lucide-react": "^0.344.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "tailwind-merge": "^2.2.0",
+    "recharts": "^2.12.0",
+    "sonner": "^1.4.0",
+    "date-fns": "^3.3.0",
+    "jszip": "^3.10.1",
+    "jspdf": "^2.5.1",
+    "@supabase/supabase-js": "^2.39.0",
+    "next-themes": "^0.3.0",
+    "next-pwa": "^5.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^8",
+    "eslint-config-next": "16.0.0",
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8"
+  }
+}
