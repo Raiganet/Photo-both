@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📸 Photo Booth App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📸 Photo Booth App</h1>
+            <p>Pilih frame favoritmu dan ambil foto!</p>
+        </header>
+
+        <div class="main-content">
+            <div class="camera-section">
+                <div class="video-container">
+                    <video id="video" autoplay playsinline></video>
+                    <div id="frame-overlay" class="frame-overlay"></div>
+                </div>
+                <div class="controls">
+                    <button id="captureBtn" class="btn btn-primary">📷 Ambil Foto</button>
+                    <button id="retakeBtn" class="btn btn-secondary" style="display:none;">🔄 Ambil Ulang</button>
+                    <button id="downloadBtn" class="btn btn-success" style="display:none;">💾 Download</button>
+                </div>
+            </div>
+
+            <div class="frames-section">
+                <h2>Pilih Frame</h2>
+                <div class="frames-grid">
+                    <div class="frame-option active" data-frame="classic">
+                        <div class="frame-preview classic-frame"></div>
+                        <p>Classic</p>
+                    </div>
+                    <div class="frame-option" data-frame="vintage">
+                        <div class="frame-preview vintage-frame"></div>
+                        <p>Vintage</p>
+                    </div>
+                    <div class="frame-option" data-frame="modern">
+                        <div class="frame-preview modern-frame"></div>
+                        <p>Modern</p>
+                    </div>
+                    <div class="frame-option" data-frame="colorful">
+                        <div class="frame-preview colorful-frame"></div>
+                        <p>Colorful</p>
+                    </div>
+                    <div class="frame-option" data-frame="elegant">
+                        <div class="frame-preview elegant-frame"></div>
+                        <p>Elegant</p>
+                    </div>
+                    <div class="frame-option" data-frame="fun">
+                        <div class="frame-preview fun-frame"></div>
+                        <p>Fun</p>
+                    </div>
+                    <div class="frame-option" data-frame="minimalist">
+                        <div class="frame-preview minimalist-frame"></div>
+                        <p>Minimalist</p>
+                    </div>
+                    <div class="frame-option" data-frame="neon">
+                        <div class="frame-preview neon-frame"></div>
+                        <p>Neon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <canvas id="canvas" style="display:none;"></canvas>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
